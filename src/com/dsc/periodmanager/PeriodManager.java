@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 /*
  * This class has the following functionality:
  * - it first creates a record in rz_mtrc_period_status table with period status = Open
