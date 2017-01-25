@@ -12,10 +12,12 @@ import java.sql.Statement;
 
 /*
  * This class has the following functionality:
- * - it first creates a record in rz_mtrc_period_status table with period status = Open
- * 
- * - then it checks if there are any incomplete(not Approved) action plans that are older that 2 months
+ *
+ * - first it checks if there are any incomplete(not Approved) action plans that are older that 2 months
  *   If it finds them, it sets the status to Expired 
+ *
+ * - then it creates a record in rz_mtrc_period_status table with period status = Open
+ * 
  * 
  * This script should run on the first day of the month.
  * If something goes wrong and it can't perform any of the steps listed above, it sends an email to the 
@@ -24,6 +26,7 @@ import java.sql.Statement;
  * @param: url - database connection URL
  * @param: sendTo - email address to use in case of error 
  *   
+ * usage example:   OpenPeriod.jar jdbc:sqlserver://DSCOBSSQLDEV\OBSSQLDEV;DatabaseName=DSC_MTRC_DEV rasul.abduguev@dsc-logistics.com
  */
 public class PeriodManager {
 
